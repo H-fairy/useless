@@ -449,6 +449,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+#apply-details .banner img{height:100%;}
 #apply-details .banner .like {
   position: absolute;
   top: 0.625rem;
@@ -458,7 +459,7 @@ body {
 #apply-details .banner .count {
   font-size: 0.8125rem;
   position: relative;
-  top: 4px;
+  top: 0px;
 }
 #apply-details .tabs {
   height: 2.09375rem;
@@ -728,7 +729,7 @@ body {
   margin-left: 0.3125rem;
 }
 .comment-box ul li .reversion {
-  width: 15.625rem;
+  width: 83%;
   border-bottom: 1px solid #E3E3E3;
 }
 .comment-box ul li .reversion .comment-detail .content-part {
