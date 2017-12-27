@@ -381,6 +381,9 @@
 		$(this).children('p').toggleClass('active');
 		$(this).children('.icon-fanhui').toggleClass('over_auto');
 	})
+	setTimeout(function(){  
+		document.body.scrollTop = document.body.scrollHeight;  
+	},300);  
 </script>
 </body>
 
