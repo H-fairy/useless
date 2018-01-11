@@ -13,10 +13,10 @@
 	</style>
 </head>
 
-<body style="height:100%;padding:0;">
+<body style="height:100%">
 <!-- 头部 -->
-<div class="detail-container" style="height:100%;display:flex;justify-content:space-between;flex-direction:column;">
-<div class="header">
+<div class="detail-container" style="height:100%;">
+	<div class="header po_fix">
     <div class="back fl">
         <a href="#" class="fl">
             <i class="iconfont icon-fanhui"></i>返回
@@ -410,9 +410,9 @@
 		//alert(111);
 	})
 	$('.comment-iput').on('blur',function(){
-		var windowH = $(window).height();
-		$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
-		//$('.footer').css('position','absolute')
+	var windowH = $(window).height();
+	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
+		$('.footer').css('position','absolute')
 		//alert(111);
 	})
 	
