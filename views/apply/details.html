@@ -395,14 +395,48 @@
 			$(this).children('.icon-fanhui').toggleClass('over_auto');
 		
 	})
-	setTimeout(function(){  
-		document.body.scrollTop = document.body.scrollHeight;  
+	//setTimeout(function(){  
+		//document.body.scrollTop = document.body.scrollHeight;  
 		//alert(document.body.scrollHeight+'========');
-	},300);  
+	//},300);
+	
 	$('.comment-iput').on('focus',function(){
 		$('.footer').css('position','absolute')
 		//alert(111);
 	})
+	$('.comment-iput').on('focus', function () {
+    var _this = this;
+    //获得屏幕的高度
+    var $windowHeight = $(window).height();  
+    //vh的计算原理,这个要自己慢慢计算出来
+    var bili = 51.63 / 100;    
+    //这个是input框应该显示的位置,应为全局变量
+    maxheight = Math.floor(bili * $windowHeight);   
+    setTimeout(function () {
+        //框架自己自带的方法,主要用着鉴别设备
+        if (device.ios || device.os == 'mac') {
+        //获取页面卷去的高度
+            var scrollPos = document.body.scrollTop;  
+            //以防出现maxheight计算错误
+            if (scrollPos > maxheight) {   
+                maxheight = scrollPos;
+            }
+            //出现了遮挡的情况,就把footer和主要内容上移
+            if (scrollPos < maxheight) {   
+            //我自己项目的实际移动距离,根据实际情况移动
+                $('.footer').css({
+                    'margin-bottom': '50px'     
+                });
+            }
+        }
+    }, 500);
+});
+$('.comment-iput').on('blur', function () {   
+//当input失去焦点的时候,取消上移的距离,恢复正常
+    $('.footer').css({
+        'margin-bottom': '0'
+    });
+});
 	
 </script>
 </body>
