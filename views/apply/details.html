@@ -403,7 +403,18 @@
 	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
 	$('#apply-details').css('overflow','scroll')
 	
-	
+	$('.comment-iput').on('focus',function(){
+		var windowH = $(window).height();
+		$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
+		//$('.footer').css('position','absolute')
+		//alert(111);
+	})
+	$('.comment-iput').on('blur',function(){
+		var windowH = $(window).height();
+		$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
+		//$('.footer').css('position','absolute')
+		//alert(111);
+	})
 	
 </script>
 </body>
