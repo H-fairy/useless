@@ -392,13 +392,17 @@
 	})
 	setTimeout(function(){  
 		document.body.scrollTop = document.body.scrollHeight;  
-		alert(document.body.scrollHeight+'========');
+		//alert(document.body.scrollHeight+'========');
 	},300);  
 	$('.comment-iput').on('focus',function(){
 		$('.footer').css('position','absolute');
+		$('.main').height($(window).height() - 80)
+		$('.main').css('overflow','hidden')
 	})
 	$('.comment-iput').on('blur',function(){
 		$('.footer').css('position','fixed');
+		//$('.main').height($(window).height() - 80)
+		$('.main').css('overflow':'hidden','height':'auto')
 	})
 </script>
 </body>
