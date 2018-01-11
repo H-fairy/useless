@@ -381,6 +381,7 @@
 <script src="../../js/common.js"></script>
 <script>
 	$(function(){
+	$('body').css('padding-bottom',10)
 	if($('.content').children('p').height() >= $('.content').children('p').children('span').height()){
 		$('.content').children('.icon-fanhui').hide();
 	}
@@ -391,7 +392,7 @@
 		
 	})
 	setTimeout(function(){  
-		document.body.scrollTop = document.body.scrollHeight;  
+		//document.body.scrollTop = document.body.scrollHeight;  
 		//alert(document.body.scrollHeight+'========');
 	},300);  
 	
