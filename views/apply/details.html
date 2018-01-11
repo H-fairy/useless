@@ -377,12 +377,19 @@
 <script src="../../libs/jquery/jquery.min.js"></script>
 <script src="../../js/common.js"></script>
 <script>
+	$(function(){
+	if($('.content').children('p').height() >= $('.content').children('p').children('span').height()){
+		$('.content').children('.icon-fanhui').hide();
+	}
+})
 	$('.content').on('click',function(){
-		$(this).children('p').toggleClass('active');
-		$(this).children('.icon-fanhui').toggleClass('over_auto');
+			$(this).children('p').toggleClass('active');
+			$(this).children('.icon-fanhui').toggleClass('over_auto');
+		
 	})
 	setTimeout(function(){  
 		document.body.scrollTop = document.body.scrollHeight;  
+		alert(document.body.scrollHeight+'========');
 	},300);  
 </script>
 </body>
