@@ -359,7 +359,7 @@
 
     
 </div>
-<div class="footer bg_main">
+<div class="footer bg_main" style="position:absolute;">
         <div class="apply clearfix">
             <div class="comment po_re fl">
                 <i class="comment-icon">
@@ -399,6 +399,9 @@
 		document.body.scrollTop = document.body.scrollHeight;  
 		//alert(document.body.scrollHeight+'========');
 	},300);
+	var windowH = $(window).height();
+	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
+	$('#apply-details').css('overflow','scroll')
 	
 	$('.comment-iput').on('focus',function(){
 		$('.footer').css('position','absolute')
