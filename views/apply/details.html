@@ -44,7 +44,7 @@
 <body style="height:100%">
 <!-- 头部 -->
 <div class="detail-container" style="height:100%;">
-	<div class="header po_fix">
+	<div class="header po_fix" style="position:static;">
     <div class="back fl">
         <a href="#" class="fl">
             <i class="iconfont icon-fanhui"></i>返回
@@ -444,7 +444,7 @@
 	$('.comment-iput').on('blur',function(){
 	var windowH = $(window).height();
 	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
-		$('.footer').css('position','absolute')
+//		$('.footer').css('position','absolute')
 		//alert(111);
 	})
 
