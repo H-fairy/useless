@@ -720,7 +720,7 @@ body {
   color: #A1A1A1;
 }
 .comment-box ul li .comment-detail .remark .operation {
-  width: 4.5rem;
+  /*width: 4.5rem;*/
 }
 .comment-box ul li .comment-detail .remark .operation a {
   float: left;
