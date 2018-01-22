@@ -444,13 +444,16 @@
 		//alert(111);
 	})
 
-var h = document.getElementsByClassName('header')[0];
-	var f = document.getElementsByClassName('footer')[0];
+//var h = document.getElementsByClassName('header')[0];
+//	var f = document.getElementsByClassName('footer')[0];
     window.onresize = function(){
-        h.style.top = 0;
-        f.style.bottom = 0;
+//        h.style.top = 0;
+//        f.style.bottom = 0;
+      document.body.scrollTop = document.body.scrollHeight;
     };
-
+window.onresize = function(){
+  document.body.scrollTop = document.body.scrollHeight;
+}
 </script>
 </body>
 
