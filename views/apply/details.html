@@ -38,16 +38,15 @@
     <link rel="stylesheet" href="../../css/iconfont/iconfont.css">
 	<style>
 	.main{position:relative;}
-    .opacity-mask{position:absolute;width:100%;height:100%;
-      left:0;top:0;display: none;}
-    .opacity-mask .opacity-input{position:absolute;bottom:0;left:0;width:200px;height:50px;}
+    .opacity-mask{position:fixed;width:100%;height:100%;top:0;left:0;z-index:111;}
+    .opacity-mask .opacity-apply{position:absolute;width:100%;height:1.6875rem;bottom:0;left:0;padding:0 5%;}
 	</style>
 </head>
 
 <body style="height:100%">
 <!-- 头部 -->
 <div class="detail-container" style="height:100%;">
-	<div class="header po_fix" style="position:static;">
+	<div class="header po_fix">
     <div class="back fl">
         <a href="#" class="fl">
             <i class="iconfont icon-fanhui"></i>返回
@@ -387,18 +386,16 @@
             </li>
         </ul>
     </div>
-
-
 </div>
 <div class="footer bg_main" style="position:static;">
         <div class="apply clearfix">
             <div class="comment po_re fl">
                 <i class="comment-icon">
-					<img src="../../images/comment.png">
-				</i>
-                <span class="comment-iput" style="display: inline-block;width:100px;height:30px;"></span>
+					        <img src="../../images/comment.png">
+                </i>
+                <span class="comment-iput">发表评论</span>
             </div>
-            <a href="#" class="apply-btn fr">我要报r名</a>
+            <a href="#" class="apply-btn fr">我要报名</a>
         </div>
         <div class="reply clearfix">
             <div class="comment po_re fl">
@@ -412,7 +409,15 @@
     </div>
 </div>
 <div class="opacity-mask">
-  <input type="text" class="opacity-input">
+  <div class="opacity-apply">
+    <div class="comment po_re fl">
+      <i class="comment-icon">
+        <img src="../../images/comment.png">
+      </i>
+      <input type="text" placeholder="发表评论" class="comment-iput">
+    </div>
+    <a href="#" class="apply-btn fr">我要报名</a>
+  </div>
 </div>
 
 <script src="../../libs/jquery/jquery.min.js"></script>
@@ -437,24 +442,18 @@
 	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
 	$('#apply-details').css('overflow','scroll')
 
-	$('.comment-iput').on('click',function(){
-    alert(1);
-    setTimeout(function(){
-      var windowH = $(window).height();
-      $('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
-    },300)
-    console.log($('body').height());
-    $('.opacity-mask').css('display','block');
-
+	$('.comment-iput').on('focus',function(){
+		var windowH = $(window).height();
+		$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
 		//$('.footer').css('position','absolute')
 		//alert(111);
 	})
-	/*$('.comment-iput').on('blur',function(){
+	$('.comment-iput').on('blur',function(){
 	var windowH = $(window).height();
 	$('#apply-details').height(windowH - $('.header').height() - $('.footer').height());
-//		$('.footer').css('position','absolute')
+		$('.footer').css('position','absolute')
 		//alert(111);
-	})*/
+	})
 
 //var h = document.getElementsByClassName('header')[0];
 //	var f = document.getElementsByClassName('footer')[0];
