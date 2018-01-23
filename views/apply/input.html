@@ -46,6 +46,46 @@
 <script>
   $('.input-wrapper').height($(window).height());
   $('.box-wrapper').height($(window).height()-100)
+  var timerId = null;
+$('.input-content input').on('focus',function(e){
+  let cnt = 0;
+  setInterval( () => {
+    if (cnt < 3) {
+    cnt++;
+  } else {
+    clearInterval(timerId);
+    timerId = null;
+    return;
+  }
+  document.body.scrollTop = document.body.scrollHeight;
+}, 300);
+})
+  $('.input-content input').on('blur',function(e){
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+  })
+  onFocus(e) {
+    let cnt = 0;
+    setInterval( () => {
+      if (cnt < 3) {
+      cnt++;
+    } else {
+      clearInterval(timerId);
+      timerId = null;
+      return;
+    }
+    document.body.scrollTop = document.body.scrollHeight;
+  }, 300);
+  }
+
+  onBlur(e) {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+  }
 </script>
 </body>
 </html>
