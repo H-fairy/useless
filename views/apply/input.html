@@ -34,14 +34,18 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-  <div style="height:1200px;">
-    <p>box</p>
+<div class="input-wrapper">
+  <div class="box-wrapper">
+    <p style="line-height:100%;font-size:60px;">box</p>
   </div>
-  <div>
-    <input type="text">
+  <div class="input-content" style="height:100px;">
+    <input type="text" style="height:100%;width:100%;">
   </div>
 </div>
 <script src="../../libs/jquery/jquery.min.js"></script>
+<script>
+  $('.input-wrapper').height($(window).height());
+  $('.box-wrapper').height($(window).height()-100)
+</script>
 </body>
 </html>
