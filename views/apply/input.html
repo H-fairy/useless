@@ -33,10 +33,10 @@
   <meta name="format-detection" content="telephone=no">
     <title>Title</title>
 </head>
-<body>
+<body style="margin:0;padding:0;">
 <div class="input-wrapper">
   <div class="box-wrapper">
-    <p style="line-height:100%;font-size:60px;">box</p>
+    <p style="margin:0;font-size:60px;">box</p>
   </div>
   <div class="input-content" style="height:100px;">
     <input type="text" style="height:100%;width:100%;">
@@ -44,6 +44,7 @@
 </div>
 <script src="../../libs/jquery/jquery.min.js"></script>
 <script>
+  alert($(window).height())
   $('.input-wrapper').height($(window).height());
   $('.box-wrapper').height($(window).height()-100)
   var timerId = null;
@@ -66,26 +67,26 @@ $('.input-content input').on('focus',function(e){
       timerId = null;
     }
   })
-  onFocus(e) {
-    let cnt = 0;
-    setInterval( () => {
-      if (cnt < 3) {
-      cnt++;
-    } else {
-      clearInterval(timerId);
-      timerId = null;
-      return;
-    }
-    document.body.scrollTop = document.body.scrollHeight;
-  }, 300);
-  }
-
-  onBlur(e) {
-    if (timerId) {
-      clearInterval(timerId);
-      timerId = null;
-    }
-  }
+//  onFocus(e) {
+//    let cnt = 0;
+//    setInterval( () => {
+//      if (cnt < 3) {
+//      cnt++;
+//    } else {
+//      clearInterval(timerId);
+//      timerId = null;
+//      return;
+//    }
+//    document.body.scrollTop = document.body.scrollHeight;
+//  }, 300);
+//  }
+//
+//  onBlur(e) {
+//    if (timerId) {
+//      clearInterval(timerId);
+//      timerId = null;
+//    }
+//  }
 </script>
 </body>
 </html>
